@@ -21,4 +21,4 @@ class Users(db.Model):
 		self.photo  		= photo
 		self.bio 			= bio
 		self.location		= location
-		self.date_created	= "{0:%A}, {0:%B} {0:%d}, {0:%y}".format(date.today())
+		self.date_created	= "{0:%A}, {0:%B} {0:%d}, 20{0:%y}".format(date.today())

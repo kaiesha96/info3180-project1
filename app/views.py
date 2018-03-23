@@ -16,8 +16,6 @@ def about():
 @app.route('/profile', methods=['POST', 'GET'])
 @app.route('/profile/<userid>')
 def profile(userid = None):
-    user = Users.query.filter_by(email = "jon@hbo.com").first()
-    print user.userid
     form = UserProfileForm()
     error = None
     if(userid):
