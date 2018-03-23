@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block css %}
+<style type="text/css">
+    .material-icons {
+        float: left;
+    }
+    ul li, h3, p {
+        color: #8a8686;
+    }
+    img {
+        height: 160px;
+    }
+    .card {
+        width: 23rem;
+        border: 1px solid #8a8686;
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<center>
+<div class="card border">
+  <img class="card-img-top rounded-circle" src="{{url_for('static', filename='uploads/penguinadmin.png')}}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title">Shaniel Wallace</h3>
+    <p class="card-text">Stdent at the University of the West Indies, Mona Campus.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i class="material-icons">email</i>shaniel@info3180.com</li>
+    <li class="list-group-item"><i class="material-icons">my_location</i>Spain</li>
+    <li class="list-group-item"><i class="material-icons">perm_contact_calendar</i>Monday, March 19, 2018</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link btn btn-primary"><i class="material-icons">add</i>Follow</a>
+  </div>
+</div>
+</center>
+{% endblock %}

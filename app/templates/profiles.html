@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block css %}
+<style type="text/css">
+    img {
+        max-height: 150px;
+    }
+    .profile {
+        display: inline-block;
+        border: 1px solid #8a8686;
+        padding: 10px;
+        border-radius: 5px;
+        margin:10px;
+    }
+</style>
+{% endblock %}
+{% block main %}
+<h1 class="page-header">All Profiles</h1>
+{% for user in users %}
+    <div class="profile col-6">
+        <center>
+            <!--<hr class="top"/>-->
+            
+            <div class="photo">
+                <img id = "profilepic" src="{{ url_for('static', filename='uploads/'+user.photo) }}"></img>
+            </div>
+            <div class="info">
+                <h3><span class="bold">{{user.first_name}} {{ user.last_name }}</span></h3>
+                <p><span class = "bold">Gender:</span> {{ user.gender }} </p>
+                <p><span class = "bold">Location:</span> {{ user.location }} </p>
+                <a href="{{ url_for('profile', userid=user.userid ) }}"><button class="btn btn-success btn-md">View Profile</button></a>
+        	</div>
+    	</center>
+    </div>
+{% endfor %}
+{% endblock %}

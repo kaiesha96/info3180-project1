@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block css %}
+<style type="text/css">
+    .material-icons {
+        float: left;
+    }
+    ul li, h3, p {
+        color: #8a8686;
+    }
+    img {
+        height: 160px;
+    }
+    .card {
+        width: 23rem;
+        border: 1px solid #8a8686;
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<center>
+<div class="card border">
+  <img class="card-img-top rounded-circle" src="{{url_for('static', filename='uploads/'+user.photo)}}" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title">{{user.first_name}} {{user.last_name}}</h3>
+    <p class="card-text">{{user.bio}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i class="material-icons">email</i>{{user.email}}</li>
+    <li class="list-group-item"><i class="material-icons">my_location</i>{{user.location}}</li>
+    <li class="list-group-item"><i class="material-icons">perm_contact_calendar</i>{{user.date_created}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link btn btn-primary"><i class="material-icons">add</i>Follow</a>
+  </div>
+</div>
+</center>
+{% endblock %}
