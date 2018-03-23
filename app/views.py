@@ -1,9 +1,9 @@
 import os
 from app import app, db
-from forms import UserProfileForm
+from .forms import UserProfileForm
 from flask import render_template, request, redirect, url_for, abort
 from werkzeug.utils import secure_filename
-from models import Users
+from .models import Users
 
 @app.route('/')
 def home():
